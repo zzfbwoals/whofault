@@ -25,7 +25,7 @@
    - '다시 재판하기', '판결문 공유' 기능
 3. **AI 판사 로직 (완료)**
    - 페르소나: 솔로몬 + 개그콘서트 (엄숙 + 유머)
-   - 기술 스택: Cloudflare Pages Functions + Gemini 1.5 Flash API
+   - 기술 스택: Cloudflare Pages Functions + Gemini 2.5 Flash API
    - 작동 방식: 
      - 프론트엔드에서 원고/피고의 주장을 JSON으로 서버에 전달 (`/api/judge`)
      - Cloudflare Function에서 Gemini API를 호출하여 구조화된 판결 데이터(JSON) 생성
