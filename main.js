@@ -3,7 +3,6 @@ const translations = {
     ko: {
         title: "누구 잘못?",
         headerTitle: "누구 잘못?",
-        headerSubtitle: "Who's at Fault?",
         headerDescription: "친구, 연인 사이의 사소한 다툼, AI 판사가 명쾌하게 판결해드립니다!",
         labelPlaintiffName: "원고 이름",
         placeholderPlaintiffName: "예: 김철수",
@@ -36,7 +35,6 @@ const translations = {
     en: {
         title: "Who's at Fault?",
         headerTitle: "Who's at Fault?",
-        headerSubtitle: "A Petty Court",
         headerDescription: "Minor disputes between friends or couples? Let the AI Judge decide!",
         labelPlaintiffName: "Plaintiff Name",
         placeholderPlaintiffName: "e.g., John",
@@ -104,7 +102,6 @@ function updateUI() {
     
     document.getElementById('title').textContent = t.title;
     document.getElementById('header-title').textContent = t.headerTitle;
-    document.getElementById('header-subtitle').textContent = t.headerSubtitle;
     document.getElementById('header-description').textContent = t.headerDescription;
     
     document.getElementById('label-plaintiff-name').textContent = t.labelPlaintiffName;
