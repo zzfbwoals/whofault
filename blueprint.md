@@ -36,6 +36,8 @@
    - 의미 없는 입력을 방지하기 위해 최소 글자 수(10자) 및 단어 수(2개) 검증 로직 추가 (프론트엔드 및 백엔드)
 6. **방문자 분석 (Google Analytics)**
    - Google Tag (gtag.js)를 통해 방문자 통계 및 행동 분석
+7. **사용자 행동 분석 (MS Clarity)**
+   - MS Clarity를 통해 세션 녹화 및 히트맵 분석
 
 ## 📋 구현 단계
 1. `blueprint.md` 작성 및 기본 구조 설계 (완료)
@@ -44,4 +46,5 @@
 4. `main.js`: 판결 로직, 데모 모드, 공유 기능 구현 (완료)
 5. **Userback 피드백 서비스 연동 (완료)**
 6. **Google Analytics 연동 (완료)**
-7. 검증 및 GitHub 배포
+7. **MS Clarity 연동 (완료)**
+8. 검증 및 GitHub 배포
