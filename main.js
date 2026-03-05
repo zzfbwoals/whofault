@@ -70,24 +70,39 @@ async function startJudgment() {
         loadingText.textContent = loadingTexts[textIdx];
     }, 1000);
 
-    // 실제로는 여기에 AI API 호출 로직이 들어감
-    // 현재는 데모 모드로 작동 (2.5초 대기)
-    setTimeout(() => {
+    try {
+        const response = await fetch('/api/judge', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ plaintiff, defendant }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'API call failed');
+        }
+
+        const data = await response.json();
+        
         clearInterval(interval);
-        renderVerdict(plaintiff, defendant);
+        renderVerdict(data);
         showScreen('result');
-    }, 2500);
+    } catch (error) {
+        console.error('Judgment Error:', error);
+        clearInterval(interval);
+        alert("재판 진행 중 예기치 못한 오류가 발생했습니다: " + error.message);
+        showScreen('input');
+    }
 }
 
-// 판결 결과 렌더링 (데모 모드)
-function renderVerdict(plaintiff, defendant) {
-    const randomVerdict = demoVerdicts[Math.floor(Math.random() * demoVerdicts.length)];
-    const winner = Math.random() > 0.5 ? "원고" : "피고";
-
-    winnerName.textContent = winner;
-    verdictTitle.textContent = `"${randomVerdict.title}"`;
-    verdictText.textContent = randomVerdict.text;
-    punishmentText.textContent = randomVerdict.punishment;
+// 판결 결과 렌더링
+function renderVerdict(data) {
+    winnerName.textContent = data.winner;
+    verdictTitle.textContent = `"${data.title}"`;
+    verdictText.textContent = data.text;
+    punishmentText.textContent = data.punishment;
 }
 
 // 초기화 함수

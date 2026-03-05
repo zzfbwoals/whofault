@@ -21,7 +21,7 @@
       enable = true;
       previews = {
         web = {
-          command = ["python3" "-m" "http.server" "$PORT" "--bind" "0.0.0.0"];
+          command = ["npx" "wrangler" "pages" "dev" "." "--port" "$PORT" "--ip" "0.0.0.0" "--compatibility-date=2024-04-03"];
           manager = "web";
         };
       };
