@@ -38,8 +38,10 @@
    - Google Tag (gtag.js)를 통해 방문자 통계 및 행동 분석
 7. **사용자 행동 분석 (MS Clarity)**
    - MS Clarity를 통해 세션 녹화 및 히트맵 분석
-8. **수익화 (Google AdSense)**
+8. **수익화 및 최적화 (AdSense & SEO)**
    - Google AdSense 연동 및 ads.txt 설정
+   - **고품질 사이트 최적화**: 서비스 소개(About), 개인정보처리방침(Privacy), 이용약관(Terms) 페이지 추가
+   - 시맨틱 마크업 및 메타 태그를 통한 SEO 강화
 
 ## 📋 구현 단계
 1. `blueprint.md` 작성 및 기본 구조 설계 (완료)
@@ -49,5 +51,5 @@
 5. **Userback 피드백 서비스 연동 (완료)**
 6. **Google Analytics 연동 (완료)**
 7. **MS Clarity 연동 (완료)**
-8. **Google AdSense 연동 (완료)**
-9. 검증 및 GitHub 배포
+8. **Google AdSense 연동 및 사이트 최적화 (진행 중)**
+9. 검증 및 배포
