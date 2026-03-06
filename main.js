@@ -1,80 +1,4 @@
-// 다국어 데이터
-const translations = {
-    ko: {
-        title: "누구 잘못?",
-        headerTitle: "누구 잘못?",
-        headerDescription: "친구, 연인 사이의 사소한 다툼, AI 판사가 명쾌하게 판결해드립니다!",
-        labelPlaintiffName: "원고 이름",
-        placeholderPlaintiffName: "예: 김철수",
-        labelPlaintiffClaim: "원고의 주장",
-        placeholderPlaintiffClaim: "예: 탕수육은 찍먹이 근본이다!",
-        labelDefendantName: "피고 이름",
-        placeholderDefendantName: "예: 이영희",
-        labelDefendantClaim: "피고의 주장",
-        placeholderDefendantClaim: "예: 소스를 부어야 고기에 잘 배어든다!",
-        btnJudge: "엄숙하게 판결 내리기",
-        loadingTexts: [
-            "판사님이 판례를 뒤지는 중...",
-            "엄숙하게 고민 중...",
-            "망치를 닦으며 마음을 가다듬는 중...",
-            "원고와 피고의 기싸움을 관찰 중..."
-        ],
-        winnerLabel: "승자",
-        punishmentLabel: "형량/벌칙:",
-        btnSaveImg: "이미지 저장",
-        btnShareApi: "공유하기",
-        btnCopyLink: "링크 복사",
-        btnRestart: "다시 재판하기",
-        footerText: "© 2026 누구 잘못?. 모든 판결은 위트가 우선입니다.",
-        alertInput: "원고와 피고의 주장을 모두 입력해주시옵소서.",
-        alertMinLength: "주장은 최소 10자 이상, 단어 2개 이상으로 구체적으로 입력해주셔야 판결이 가능합니다.",
-        alertNameLength: "이름은 2자 이상 입력해주세요.",
-        shareTitle: "[누구 잘못? 판결문]",
-        shareWinner: "승자",
-        shareCrime: "죄목",
-        sharePunishment: "형량",
-        copySuccess: "링크가 복사되었습니다!",
-        saveSuccess: "이미지 저장을 시작합니다...",
-        shareError: "공유 기능을 사용할 수 없는 환경입니다."
-    },
-    en: {
-        title: "Who's at Fault?",
-        headerTitle: "Who's at Fault?",
-        headerDescription: "Minor disputes between friends or couples? Let the AI Judge decide!",
-        labelPlaintiffName: "Plaintiff Name",
-        placeholderPlaintiffName: "e.g., John",
-        labelPlaintiffClaim: "Plaintiff's Claim",
-        placeholderPlaintiffClaim: "e.g., Dipping sauce is better!",
-        labelDefendantName: "Defendant Name",
-        placeholderDefendantName: "e.g., Jane",
-        labelDefendantClaim: "Defendant's Claim",
-        placeholderDefendantClaim: "e.g., Pouring sauce is better!",
-        btnJudge: "Deliver Strict Judgment",
-        loadingTexts: [
-            "Judge is reviewing precedents...",
-            "Deliberating solemnly...",
-            "Polishing the gavel...",
-            "Observing the tension between parties..."
-        ],
-        winnerLabel: "Winner",
-        punishmentLabel: "Sentence/Penalty:",
-        btnSaveImg: "Save Image",
-        btnShareApi: "Share",
-        btnCopyLink: "Copy Link",
-        btnRestart: "Restart Trial",
-        footerText: "© 2026 Who's at Fault?. Wit comes first in all judgments.",
-        alertInput: "Please enter both plaintiff and defendant claims.",
-        alertMinLength: "Claims must be at least 10 characters long and contain at least 2 words.",
-        alertNameLength: "Names must be at least 2 characters long.",
-        shareTitle: "[Who's at Fault? Verdict]",
-        shareWinner: "Winner",
-        shareCrime: "Crime",
-        sharePunishment: "Penalty",
-        copySuccess: "Link copied to clipboard!",
-        saveSuccess: "Saving image...",
-        shareError: "Sharing is not supported in this browser."
-    }
-};
+import { translations } from './i18n.js';
 
 let currentLang = localStorage.getItem('lang') || 'ko';
 
@@ -128,6 +52,14 @@ function updateUI() {
     document.getElementById('btn-copy-link').textContent = t.btnCopyLink;
     restartBtn.textContent = t.btnRestart;
     document.getElementById('footer-text').textContent = t.footerText;
+    
+    document.getElementById('extra-title').textContent = t.extraTitle;
+    document.getElementById('extra-description').textContent = t.extraDescription;
+    
+    document.getElementById('link-about').textContent = t.linkAbout;
+    document.getElementById('link-privacy').textContent = t.linkPrivacy;
+    document.getElementById('link-terms').textContent = t.linkTerms;
+    
     Object.keys(langBtns).forEach(lang => {
         langBtns[lang].classList.toggle('active', lang === currentLang);
     });
