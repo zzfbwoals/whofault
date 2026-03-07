@@ -6,10 +6,10 @@ export async function onRequestPost(context) {
     // 8자리의 짧은 랜덤 ID 생성
     const id = crypto.randomUUID().split('-')[0];
     
-    // KV에 저장 (30일 후 자동 삭제 설정으로 관리 효율화 가능)
+    // KV에 저장 (10분 후 자동 삭제 설정)
     // env.VERDICTS는 wrangler.toml에서 설정할 바인딩 이름입니다.
     await env.VERDICTS.put(id, JSON.stringify(data), {
-      expirationTtl: 60 * 60 * 24 * 30 // 30일 유지
+      expirationTtl: 600 // 10분(600초) 유지
     });
     
     return new Response(JSON.stringify({ id }), {
