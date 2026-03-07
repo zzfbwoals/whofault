@@ -322,6 +322,7 @@ input[type="text"]:focus, textarea:focus {
     text-align: left;
     font-size: 1.1rem;
     color: #444;
+    white-space: pre-line;
 }
 
 .punishment {
@@ -330,6 +331,7 @@ input[type="text"]:focus, textarea:focus {
     border-radius: 10px;
     font-size: 1rem;
     color: #d63031;
+    white-space: pre-line;
 }
 
 footer {
